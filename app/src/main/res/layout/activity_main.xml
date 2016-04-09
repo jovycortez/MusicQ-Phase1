@@ -9,4 +9,37 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.group6.mobileappdev.musicq_phase1.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:text="WELCOME TO MUSICQ"
+        android:textColor="#ff662a"
+        android:textSize="25dp"
+        android:typeface="monospace"
+        android:textStyle="bold|normal|italic"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:id="@+id/buttonLogin"
+        android:textColor="#fbf3f3"
+        android:textStyle="bold|normal|italic"
+        android:typeface="monospace"
+        android:background="#ff662a"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/colorwheel"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
