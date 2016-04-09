@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(LoginActivity.this, CreatePlaylist.class));
+
                 attemptLogin();
             }
         });
@@ -148,6 +148,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     private void attemptLogin() {
         if (mAuthTask != null) {
+            startActivity(new Intent(LoginActivity.this, CreatePlaylist.class));
             return;
         }
 
@@ -190,6 +191,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
+           // startActivity(new Intent(LoginActivity.this, CreatePlaylist.class));
         }
     }
 
