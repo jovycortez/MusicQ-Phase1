@@ -1,5 +1,7 @@
 package com.group6.mobileappdev.musicq_phase1;
-
+/**
+ * Created by Amna Anwar on 07/04/16.
+ */
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

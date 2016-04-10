@@ -1,5 +1,9 @@
 package com.group6.mobileappdev.musicq_phase1;
 
+/**
+ * Created by Amna Anwar on 07/04/16.
+ */
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -84,12 +88,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
+        mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-
-                attemptLogin();
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, CreatePlaylist.class));
             }
         });
 

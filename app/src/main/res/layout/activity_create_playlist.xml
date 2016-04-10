@@ -8,6 +8,91 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.group6.mobileappdev.musicq_phase1.CreatePlaylist"
-    android:background="#000000">
+    android:background="@color/colorBlack">
+
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextPlaylistName"
+            android:layout_weight="1"
+            android:textSize="23dp"
+            android:background="@color/colorOrange"
+            android:hint="Playlist Name"
+            android:textColorHint="@color/colorDarkGray"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="23dp"
+            android:text="Require password:"
+            android:id="@+id/textView2"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/imageViewPlaylist"
+            android:layout_alignParentStart="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchPlaylistRequirePassword"
+        android:layout_alignEnd="@+id/editTextPlaylistName"
+        android:background="@color/colorOrange"
+        android:layout_alignBottom="@+id/textView2"
+        android:text="  OFF   "
+        android:textColor="#ffffff"
+        android:layout_alignTop="@+id/textView2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editTextPlaylistPassword"
+        android:hint="Playlist Password"
+        android:textColorHint="@color/colorDarkGray"
+        android:background="@color/colorOrange"
+        android:textSize="23dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="23dp"
+        android:text="Choose Playlist Image:"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/editTextPlaylistName"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageViewPlaylist"
+        android:background="@drawable/addimage"
+        android:layout_below="@+id/textView3"
+        android:layout_toStartOf="@+id/switchPlaylistRequirePassword" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:background="@color/colorGreen"
+        android:id="@+id/btnSavePlaylist"
+        android:textColor="@color/colorWhite"
+        android:textSize="23dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp" />
+
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.group6.mobileappdev.musicq_phase1.LoginActivity"
-    android:background="#000000">
+    android:background="@color/colorBlack">
 
     <!-- Login progress -->
     <ProgressBar
@@ -93,15 +93,29 @@
             <Button
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:text="@string/action_sign_in"
+                android:textColor="@color/colorWhite"
+                android:textSize="23dp"
                 android:textStyle="bold"
-                android:background="#ff662a"
+                android:background="@color/colorGreen"
                 android:layout_gravity="center_horizontal"
                 android:elegantTextHeight="false" />
 
+
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="Forgot Username or Password?"
+        android:textColor="@color/colorBlue"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:textStyle="italic" />
+</RelativeLayout>
