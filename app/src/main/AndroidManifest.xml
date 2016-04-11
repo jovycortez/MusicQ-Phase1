@@ -21,10 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".Register"
             android:label="@string/title_activity_login" />
         <activity android:name=".CreatePlaylist" />
-        <activity android:name=".ViewPlaylistMenu"></activity>
+        <activity android:name=".ViewPlaylistMenu" />
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login"></activity>
     </application>
 
 </manifest>
