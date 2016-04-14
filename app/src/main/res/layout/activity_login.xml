@@ -9,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.group6.mobileappdev.musicq_phase1.Login">
+    tools:context="com.group6.mobileappdev.musicq_phase1.Login"
+    android:weightSum="1">
 
     <!-- Login progress -->
     <ProgressBar
@@ -20,79 +21,72 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <ScrollView
-        android:id="@+id/login_form"
-        android:layout_width="match_parent"
-        android:layout_height="157dp">
-
         <LinearLayout
-            android:id="@+id/email_login_form"
+        android:id="@+id/email_login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-                <AutoCompleteTextView
-                    android:id="@+id/emailLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorOrange"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="23dp"
-                    android:textColorHint="@color/colorDarkGray"
-                    android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            </android.support.design.widget.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    </LinearLayout>
 
-                <EditText
-                    android:id="@+id/passwordLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorOrange"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="23dp"
-                    android:textColorHint="@color/colorDarkGray"
-                    android:hint="Password"
-                    android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+    <AutoCompleteTextView
+        android:id="@+id/emailLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:textSize="23dp"
+        android:textColorHint="@color/colorWhite"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true" />
 
-            </android.support.design.widget.TextInputLayout>
+    <EditText
+        android:id="@+id/passwordLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:textSize="23dp"
+        android:textColorHint="@color/colorWhite"
+        android:hint="Password"
+        android:imeActionId="@+id/login"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true" />
 
-            <Button
-                android:id="@+id/btnLogin"
-                style="?android:text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorGreen"
-                android:textColor="@color/colorWhite"
-                android:textSize="23dp"
-                android:layout_marginTop="16dp"
-                android:text="LOGIN"
-                 />
+    <Button
+        android:id="@+id/btnLogin"
+        style="?android:text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/twitterBlue"
+        android:textColor="@color/colorWhite"
+        android:textSize="23dp"
+        android:layout_marginTop="16dp"
+        android:text="LOGIN"
+        android:layout_gravity="center_horizontal" />
 
-
-
-        </LinearLayout>
-    </ScrollView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tap here to Register."
-        android:textColor="@color/colorBlue"
+        android:textColor="@color/colorDarkGray"
         android:textSize="20dp"
         android:id="@+id/textViewRegister"
         android:clickable="true" />

@@ -15,22 +15,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:text="WELCOME TO MUSICQ"
-        android:textColor="#ff662a"
+        android:textColor="@color/colorWhite"
         android:textSize="25dp"
-        android:typeface="monospace"
-        android:textStyle="bold|normal|italic"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp" />
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
+        android:text="ENTER"
         android:id="@+id/buttonLogin"
+        android:textSize="23dp"
         android:textColor="#fbf3f3"
-        android:textStyle="bold|normal|italic"
-        android:typeface="monospace"
         android:background="#ff662a"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
