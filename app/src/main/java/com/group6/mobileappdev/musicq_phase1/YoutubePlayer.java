@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -16,7 +18,7 @@ public class YoutubePlayer extends YouTubeBaseActivity implements YouTubePlayer.
 
     private static final int RECOVERY_REQUEST = 1;
     private YouTubePlayerView youTubeView;
-
+    Button btn3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,17 +26,26 @@ public class YoutubePlayer extends YouTubeBaseActivity implements YouTubePlayer.
 
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+        btn3 = (Button)findViewById(R.id.btnDislike);
+
     }
 
     @Override
-    public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
+    public void onInitializationSuccess(Provider provider, final YouTubePlayer player, boolean wasRestored) {
         if (!wasRestored) {
 
             /*Button click listener cast to a variable and get the url*/
-            player.cueVideo("fhWaJi1Hsfo"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
+           // player.loadPlaylist("fhWaJi1Hsfo"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
             //https://www.youtube.com/watch?v=h70n82G-zz4&nohtml5=False
+            player.loadPlaylist("KDxJlW6cxRk&list=PLxtNsXIpXlFOpyQP_pBU2bNQUiGtpdIWU");
 
-
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   player.next();
+                }
+            });
+          //  https://www.youtube.com/watch?v=KDxJlW6cxRk&list=PLxtNsXIpXlFOpyQP_pBU2bNQUiGtpdIWU
            // player.cuePlaylist("MKXK8xwYDIA&index=1&list=RDMKXK8xwYDIA"); //https://www.youtube.com/watch?v=MKXK8xwYDIA&list=RDMKXK8xwYDIA#t=1
         }
     }

@@ -37,7 +37,7 @@ package com.group6.mobileappdev.musicq_phase1;
         @Override
         protected String doInBackground(String... params) {
             String reg_url = "http://10.0.2.2/webapp/register.php";
-            String login_url = "http://10.0.2.2/webapp/login.php";
+            String login_url = "http://10.0.2.2/webapp/activity_login.php";
             String method = params[0];
             if (method.equals("register")) {
                 String name = params[1];
@@ -69,7 +69,7 @@ package com.group6.mobileappdev.musicq_phase1;
                     e.printStackTrace();
                 }
             }
-            else if(method.equals("login"))
+            else if(method.equals("activity_login"))
             {
                 String login_name = params[1];
                 String login_pass = params[2];
