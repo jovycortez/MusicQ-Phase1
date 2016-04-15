@@ -33,10 +33,10 @@ package com.group6.mobileappdev.musicq_phase1;
         @Override
         protected String doInBackground(String... params) {
             String type = params[0];
-            String savePlaylist_url = "http://10.0.2.2/MusicQWebApp/selectPlaylist.php";
+            String savePlaylist_url = "http://10.0.2.2/MusicQWebApp/insertPlaylist.php";
             if (type.equals("addPlaylist")) {
                 try {
-                    String playlist_name = params[1];
+                    String playlistName = params[1];
                     URL url = new URL(savePlaylist_url);
                     HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                     httpURLConnection.setRequestMethod("POST");
@@ -44,7 +44,7 @@ package com.group6.mobileappdev.musicq_phase1;
                     httpURLConnection.setDoInput(true);
                     OutputStream outputStream = httpURLConnection.getOutputStream();
                     BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                    String post_data = URLEncoder.encode("playlist_name", "UTF-8") + "=" + URLEncoder.encode(playlist_name, "UTF-8");
+                    String post_data = URLEncoder.encode("playlist_name", "UTF-8") + "=" + URLEncoder.encode(playlistName, "UTF-8");
                     bufferedWriter.write(post_data);
                     bufferedWriter.flush();
                     bufferedWriter.close();

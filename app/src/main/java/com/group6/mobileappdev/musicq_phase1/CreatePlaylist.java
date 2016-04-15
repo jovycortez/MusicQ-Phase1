@@ -9,14 +9,14 @@ import android.widget.EditText;
 
 public class CreatePlaylist extends AppCompatActivity {
 
-    EditText PlaylistET;
-
+    EditText playlistET;
+    String playlistName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_playlist);
 
-        PlaylistET = (EditText) findViewById(R.id.editTextPartyName);
+        playlistET = (EditText) findViewById(R.id.editTextPartyName);
 
 
         Button btn = (Button)findViewById(R.id.btnSavePlaylist);
@@ -26,17 +26,17 @@ public class CreatePlaylist extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(CreatePlaylist.this, ViewPlaylistMenu.class));
-                OnSavePlaylist(v);
+
             }
         });
 
     }
 
     public void OnSavePlaylist(View view){
-        String playlistname = PlaylistET.getText().toString();
+        String playlistName = playlistET.getText().toString();
         BackgroundTask backgroundTask = new BackgroundTask(this);
         String type = "addPlaylist";
-        backgroundTask.execute(type,playlistname,"");
+        backgroundTask.execute(type,playlistName);
 
     }
 }
