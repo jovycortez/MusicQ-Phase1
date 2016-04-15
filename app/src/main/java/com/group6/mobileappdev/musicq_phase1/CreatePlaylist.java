@@ -24,7 +24,9 @@ public class CreatePlaylist extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(CreatePlaylist.this, ViewPlaylistMenu.class));
+                OnSavePlaylist(v);
             }
         });
 
