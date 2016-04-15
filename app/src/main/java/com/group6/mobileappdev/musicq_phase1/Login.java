@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, ViewPlaylistMenu.class));
+                startActivity(new Intent(Login.this, CreatePlaylist.class));
             }
         });
 

@@ -25,80 +25,42 @@ package com.group6.mobileappdev.musicq_phase1;
     public class BackgroundTask extends AsyncTask<String,Void,String> {
         AlertDialog alertDialog;
         Context ctx;
-        BackgroundTask(Context ctx)
-        {
-            this.ctx =ctx;
+
+        BackgroundTask(Context ctx) {
+            this.ctx = ctx;
         }
-        @Override
-        protected void onPreExecute() {
-            alertDialog = new AlertDialog.Builder(ctx).create();
-            alertDialog.setTitle("Login Information....");
-        }
+
         @Override
         protected String doInBackground(String... params) {
-            String reg_url = "http://10.0.2.2/webapp/register.php";
-            String login_url = "http://10.0.2.2/webapp/activity_login.php";
-            String method = params[0];
-            if (method.equals("register")) {
-                String name = params[1];
-                String user_name = params[2];
-                String user_pass = params[3];
+            String type = params[0];
+            String savePlaylist_url = "http://10.0.2.2/MusicQWebApp/selectPlaylist.php";
+            if (type.equals("addPlaylist")) {
                 try {
-                    URL url = new URL(reg_url);
+                    String playlist_name = params[1];
+                    URL url = new URL(savePlaylist_url);
                     HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                    httpURLConnection.setRequestMethod("POST");
-                    httpURLConnection.setDoOutput(true);
-                    //httpURLConnection.setDoInput(true);
-                    OutputStream OS = httpURLConnection.getOutputStream();
-                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
-                    String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&" +
-                            URLEncoder.encode("user_name", "UTF-8") + "=" + URLEncoder.encode(user_name, "UTF-8") + "&" +
-                            URLEncoder.encode("user_pass", "UTF-8") + "=" + URLEncoder.encode(user_pass, "UTF-8");
-                    bufferedWriter.write(data);
-                    bufferedWriter.flush();
-                    bufferedWriter.close();
-                    OS.close();
-                    InputStream IS = httpURLConnection.getInputStream();
-                    IS.close();
-                    //httpURLConnection.connect();
-                    httpURLConnection.disconnect();
-                    return "Registration Success...";
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            else if(method.equals("activity_login"))
-            {
-                String login_name = params[1];
-                String login_pass = params[2];
-                try {
-                    URL url = new URL(login_url);
-                    HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                     httpURLConnection.setRequestMethod("POST");
                     httpURLConnection.setDoOutput(true);
                     httpURLConnection.setDoInput(true);
                     OutputStream outputStream = httpURLConnection.getOutputStream();
-                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-                    String data = URLEncoder.encode("login_name","UTF-8")+"="+URLEncoder.encode(login_name,"UTF-8")+"&"+
-                            URLEncoder.encode("login_pass","UTF-8")+"="+URLEncoder.encode(login_pass,"UTF-8");
-                    bufferedWriter.write(data);
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                    String post_data = URLEncoder.encode("playlist_name", "UTF-8") + "=" + URLEncoder.encode(playlist_name, "UTF-8");
+                    bufferedWriter.write(post_data);
                     bufferedWriter.flush();
                     bufferedWriter.close();
                     outputStream.close();
                     InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
-                    String response = "";
+                    inputStream.close();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                    String result = "";
                     String line = "";
-                    while ((line = bufferedReader.readLine())!=null)
-                    {
-                        response+= line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        result += line;
                     }
                     bufferedReader.close();
                     inputStream.close();
                     httpURLConnection.disconnect();
-                    return response;
+                    return result;
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
@@ -108,20 +70,20 @@ package com.group6.mobileappdev.musicq_phase1;
             return null;
         }
         @Override
-        protected void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
+        protected void onPreExecute() {
+            alertDialog = new AlertDialog.Builder(ctx).create();
+            alertDialog.setTitle("Playlist Information....");
         }
+
         @Override
         protected void onPostExecute(String result) {
-            if(result.equals("Registration Success..."))
-            {
-                Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
-            }
-            else
-            {
-                alertDialog.setMessage(result);
-                alertDialog.show();
-            }
+            alertDialog.setMessage(result);
+            alertDialog.show();
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
         }
     }
 
